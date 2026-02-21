@@ -37,8 +37,8 @@
     ],
     "project": "nini_adventure.tiled-project",
     "recentFiles": [
+        "assets/tilesets/ladder.tsx",
         "assets/tilesets/bush.tsx",
-        "assets/tilesets/tileset_bakery.tsx",
-        "assets/tilesets/ladder.tsx"
+        "assets/tilesets/tileset_bakery.tsx"
     ]
 }
