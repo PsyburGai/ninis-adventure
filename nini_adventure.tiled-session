@@ -1,16 +1,36 @@
 {
-    "activeFile": "",
+    "activeFile": "assets/tilesets/ladder.tsx",
     "expandedProjectPaths": [
         "maps/world1",
-        "tilesets",
+        "maps",
         ".",
-        "maps"
+        "tilesets",
+        "assets",
+        "assets/tilesets"
     ],
     "fileStates": {
+        "assets/tilesets/bush.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/tilesets/ladder.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/tilesets/tileset_bakery.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
     },
     "openFiles": [
+        "assets/tilesets/bush.tsx",
+        "assets/tilesets/tileset_bakery.tsx",
+        "assets/tilesets/ladder.tsx"
     ],
     "project": "nini_adventure.tiled-project",
     "recentFiles": [
+        "assets/tilesets/bush.tsx",
+        "assets/tilesets/tileset_bakery.tsx",
+        "assets/tilesets/ladder.tsx"
     ]
 }
