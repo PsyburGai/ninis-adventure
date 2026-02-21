@@ -2,11 +2,11 @@
     "activeFile": "assets/tilesets/ladder.tsx",
     "expandedProjectPaths": [
         "maps/world1",
-        "maps",
-        ".",
         "tilesets",
+        "assets/tilesets",
+        "maps",
         "assets",
-        "assets/tilesets"
+        "."
     ],
     "fileStates": {
         "assets/tilesets/bush.tsx": {
