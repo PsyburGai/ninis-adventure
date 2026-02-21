@@ -32,6 +32,14 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
+[editor]
+
+import/use_multiple_threads=false
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/yati/YATI-main/GDScript/addons/YATI/plugin.cfg")
+
 [input]
 
 move_left={
@@ -56,7 +64,3 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-
-[editor]
-
-import/use_multiple_threads=false
