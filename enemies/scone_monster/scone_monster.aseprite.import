@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://y8nfo5gy1ls4"
+path="res://.godot/imported/scone_monster.aseprite-cf2ec855e125aab71085cfe3febe8fc5.res"
+
+[deps]
+
+source_file="res://scenes/enemies/scone_monster/scone_monster.aseprite"
+dest_files=["res://.godot/imported/scone_monster.aseprite-cf2ec855e125aab71085cfe3febe8fc5.res"]
+
+[params]
+

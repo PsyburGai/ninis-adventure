@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bbhl5qvhfprot"
+path="res://.godot/imported/Cake_Monster1.aseprite-56a862ab1465462ae1f45f76a9c1ec7a.res"
+
+[deps]
+
+source_file="res://scenes/enemies/cake_monster/Cake_Monster1.aseprite"
+dest_files=["res://.godot/imported/Cake_Monster1.aseprite-56a862ab1465462ae1f45f76a9c1ec7a.res"]
+
+[params]
+

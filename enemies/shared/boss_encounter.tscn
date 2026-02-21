@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://boss_encounter"]
+
+[ext_resource type="Script" path="res://scenes/enemies/shared/boss_encounter.gd" id="1_boss"]
+[ext_resource type="Texture2D" path="res://scenes/enemies/cake_monster/Cake_Monster1.png" id="2_cake_boss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boss"]
+size = Vector2(32, 32)
+
+[node name="BossEncounter" type="Area2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_boss")
+boss_name = "Cake Monster"
+boss_max_hp = 30
+boss_attack = 7
+boss_defense = 4
+boss_speed = 5
+boss_xp_reward = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_boss")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cake_boss")
+hframes = 18
+frame = 0
+scale = Vector2(2, 2)
+
+[node name="BossLabel" type="Label" parent="."]
+offset_left = -40.0
+offset_top = -60.0
+offset_right = 40.0
+offset_bottom = -40.0
+theme_override_colors/font_color = Color(1, 0.8, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "BOSS"
+horizontal_alignment = 1

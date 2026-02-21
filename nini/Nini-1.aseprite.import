@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://4c1oofhk0hvs"
+path="res://.godot/imported/Nini-1.aseprite-a14218ab028a5d2c9aeb23f107a59cb1.res"
+
+[deps]
+
+source_file="res://scenes/player/nini/Nini-1.aseprite"
+dest_files=["res://.godot/imported/Nini-1.aseprite-a14218ab028a5d2c9aeb23f107a59cb1.res"]
+
+[params]
+

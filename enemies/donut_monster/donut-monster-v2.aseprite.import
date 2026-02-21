@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://ddlox41lh2k0s"
+path="res://.godot/imported/donut-monster-v2.aseprite-28a847456dfb426d9d28d7979cb76181.res"
+
+[deps]
+
+source_file="res://scenes/enemies/donut_monster/donut-monster-v2.aseprite"
+dest_files=["res://.godot/imported/donut-monster-v2.aseprite-28a847456dfb426d9d28d7979cb76181.res"]
+
+[params]
+
