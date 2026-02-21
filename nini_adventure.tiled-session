@@ -1,6 +1,10 @@
 {
     "activeFile": "",
     "expandedProjectPaths": [
+        "maps/world1",
+        "tilesets",
+        ".",
+        "maps"
     ],
     "fileStates": {
     },
