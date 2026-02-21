@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://level_1_1"]
 
+[ext_resource type="PackedScene" path="res://source/scenes/player/nini.tscn" id="1_nini"]
+
 [node name="Level1_1" type="Node2D"]
 
 [node name="TiledMap" type="Node2D" parent="."]
-# After installing YATI: drag maps/world1/level_1-1.tmx from FileSystem
-# onto this scene, or use: Scene > Instantiate Child Scene
+# After installing YATI: drag maps/world1/level_1-1.tmx from FileSystem onto this node
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = true
@@ -16,3 +17,11 @@ limit_left = 0
 limit_right = 2560
 limit_top = -9999
 limit_bottom = 9999
+
+[node name="SpawnLeft" type="Marker2D" parent="."]
+position = Vector2(32, 100)
+
+[node name="SpawnRight" type="Marker2D" parent="."]
+position = Vector2(2480, 100)
+
+[node name="Nini" parent="." instance=ExtResource("1_nini")]

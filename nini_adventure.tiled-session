@@ -1,4 +1,8 @@
 {
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
     "activeFile": "assets/tilesets/ladder.tsx",
     "expandedProjectPaths": [
         "maps/world1",
@@ -22,6 +26,10 @@
             "scaleInEditor": 1
         }
     },
+    "map.height": 21,
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 80,
     "openFiles": [
         "assets/tilesets/bush.tsx",
         "assets/tilesets/tileset_bakery.tsx",

@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://nini_player"]
+
+[ext_resource type="Script" path="res://source/scripts/player/nini.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ccx6ysy65ey0r" path="res://nini/Nini-1.png" id="2_texture"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_walk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(0, 0, 32, 32)
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(32, 0, 32, 32)
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(64, 0, 32, 32)
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(96, 0, 32, 32)
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(128, 0, 32, 32)
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(160, 0, 32, 32)
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(192, 0, 32, 32)
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(224, 0, 32, 32)
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(256, 0, 32, 32)
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(288, 0, 32, 32)
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(320, 0, 32, 32)
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_texture"),
+"texture_region": Rect2(352, 0, 32, 32)
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nini"]
+radius = 7.0
+height = 20.0
+
+[node name="Nini" type="CharacterBody2D"]
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_walk")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_nini")
