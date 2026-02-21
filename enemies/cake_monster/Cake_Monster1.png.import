@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3icm5glg6toh"
-path="res://.godot/imported/Cake_Monster1.png-9460770642f605c0f84489da8f2eb62d.ctex"
+path="res://.godot/imported/Cake_Monster1.png-bfbf8e2009810ed7067595515f196d02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/enemies/cake_monster/Cake_Monster1.png"
-dest_files=["res://.godot/imported/Cake_Monster1.png-9460770642f605c0f84489da8f2eb62d.ctex"]
+source_file="res://enemies/cake_monster/Cake_Monster1.png"
+dest_files=["res://.godot/imported/Cake_Monster1.png-bfbf8e2009810ed7067595515f196d02.ctex"]
 
 [params]
 

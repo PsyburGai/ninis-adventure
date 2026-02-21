@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnqioervu246"
-path="res://.godot/imported/scone_monster_spritesheet.png-c81e994ca2eb1e072101d8c99b4cf7b5.ctex"
+path="res://.godot/imported/scone_monster_spritesheet.png-756d4b7e0ee1e63a298309795534147e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/enemies/scone_monster/scone_monster_spritesheet.png"
-dest_files=["res://.godot/imported/scone_monster_spritesheet.png-c81e994ca2eb1e072101d8c99b4cf7b5.ctex"]
+source_file="res://enemies/scone_monster/scone_monster_spritesheet.png"
+dest_files=["res://.godot/imported/scone_monster_spritesheet.png-756d4b7e0ee1e63a298309795534147e.ctex"]
 
 [params]
 

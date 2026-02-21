@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://level_1_1"]
+
+[node name="Level1_1" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 90)
+
+[node name="Label" type="Label" parent="."]
+position = Vector2(100, 80)
+text = "Level 1-1 - Coming Soon!"

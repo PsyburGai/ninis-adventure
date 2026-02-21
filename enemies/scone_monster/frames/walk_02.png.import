@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csmowb851daux"
-path="res://.godot/imported/walk_02.png-d40dfe424d03eb796f04a6b302246e3b.ctex"
+path="res://.godot/imported/walk_02.png-adaf01446e6c7609280f3b1f276baa93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/enemies/scone_monster/frames/walk_02.png"
-dest_files=["res://.godot/imported/walk_02.png-d40dfe424d03eb796f04a6b302246e3b.ctex"]
+source_file="res://enemies/scone_monster/frames/walk_02.png"
+dest_files=["res://.godot/imported/walk_02.png-adaf01446e6c7609280f3b1f276baa93.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://k22x73qjr2r"
-path="res://.godot/imported/falling_forks_spritesheet7.png-82e25ad6b514fe0191a0daaff0087aa5.ctex"
+path="res://.godot/imported/falling_forks_spritesheet7.png-fe7f1c131e54ce950e1e6b94c94f1b40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/player/spells/falling_forks/falling_forks_spritesheet7.png"
-dest_files=["res://.godot/imported/falling_forks_spritesheet7.png-82e25ad6b514fe0191a0daaff0087aa5.ctex"]
+source_file="res://skills/falling_forks/falling_forks_spritesheet7.png"
+dest_files=["res://.godot/imported/falling_forks_spritesheet7.png-fe7f1c131e54ce950e1e6b94c94f1b40.ctex"]
 
 [params]
 

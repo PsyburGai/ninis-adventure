@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccx6ysy65ey0r"
-path="res://.godot/imported/Nini-1.png-124a44606eecb322a6dfbbb39d3d2a4d.ctex"
+path="res://.godot/imported/Nini-1.png-09787b013554e910ee84bbd2c2e9b025.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/player/nini/Nini-1.png"
-dest_files=["res://.godot/imported/Nini-1.png-124a44606eecb322a6dfbbb39d3d2a4d.ctex"]
+source_file="res://nini/Nini-1.png"
+dest_files=["res://.godot/imported/Nini-1.png-09787b013554e910ee84bbd2c2e9b025.ctex"]
 
 [params]
 
