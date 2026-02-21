@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://level_1_2"]
+
+[node name="Level1_2" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 90)
+
+[node name="Label" type="Label" parent="."]
+position = Vector2(80, 80)
+text = "Level 1-2 - Cave"

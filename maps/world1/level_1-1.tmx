@@ -98,8 +98,13 @@
   <object id="26" name="Coin" type="Coin" x="2256" y="160"/>
   <object id="27" name="Coin" type="Coin" x="2320" y="128"/>
 
-  <!-- END FLAG -->
-  <object id="28" name="LevelEnd" type="LevelEnd" x="2448" y="128"/>
+  <!-- PORTAL RIGHT - leads to level_1-2 -->
+  <object id="28" name="PortalRight" type="Portal" x="2512" y="128">
+   <properties>
+    <property name="target_scene" value="res://source/scenes/levels/level_1_2.tscn"/>
+    <property name="target_spawn" value="left"/>
+   </properties>
+  </object>
 
  </objectgroup>
 
