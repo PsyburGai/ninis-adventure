@@ -2,9 +2,16 @@
 
 [node name="Level1_2" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(160, 90)
+[node name="TiledMap" type="Node2D" parent="."]
+# After installing YATI: drag maps/world1/level_1-2.tmx onto this scene
 
-[node name="Label" type="Label" parent="."]
-position = Vector2(80, 80)
-text = "Level 1-2 - Cave"
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = true
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = false
+limit_left = 0
+limit_right = 2560
+limit_top = -9999
+limit_bottom = 9999

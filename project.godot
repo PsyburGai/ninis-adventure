@@ -20,6 +20,10 @@ run/main_scene="res://source/scenes/levels/main_menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/ui/icon.png"
 
+[autoload]
+
+SceneTransition="*uid://pmhqe225pbvq"
+
 [display]
 
 window/size/viewport_width=320
@@ -52,3 +56,7 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+
+[editor]
+
+import/use_multiple_threads=false
