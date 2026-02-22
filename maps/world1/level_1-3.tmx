@@ -111,7 +111,7 @@
     <property name="target_spawn" value="right"/>
    </properties>
   </object>
-  <object id="2" name="portal_exit" class="instance" x="1264" y="183.33" width="16" height="48">
+  <object id="2" name="portal_exit" class="instance" x="1264.25" y="199.33" width="16" height="48">
    <properties>
     <property name="res_path" value="../../source/scenes/objects/portal.tscn"/>
     <property name="target_scene" value="res://source/scenes/levels/level_1_4.tscn"/>
