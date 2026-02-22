@@ -17,9 +17,9 @@ func _apply_spawn() -> void:
 	var side = SceneTransition.next_spawn
 	if side != "":
 		if side == "right":
-			global_position = Vector2(2480, SaveManager.position.y)
+			global_position = Vector2(1240, SaveManager.position.y)
 		else:
-			global_position = Vector2(16, SaveManager.position.y)
+			global_position = Vector2(40, SaveManager.position.y)
 		SceneTransition.next_spawn = ""
 	else:
 		global_position = SaveManager.position
