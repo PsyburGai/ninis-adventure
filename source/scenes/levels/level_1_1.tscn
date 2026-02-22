@@ -10,4 +10,4 @@ position = Vector2(0, -210)
 position = Vector2(0, 144)
 
 [node name="Nini" parent="." unique_id=522777548 instance=ExtResource("2_nini")]
-position = Vector2(240, 448)
+position = Vector2(240, 270)
