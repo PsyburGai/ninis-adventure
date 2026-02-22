@@ -31,6 +31,7 @@
         }
     },
     "map.height": 21,
+    "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "map.width": 80,
