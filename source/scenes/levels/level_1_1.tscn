@@ -8,14 +8,5 @@
 [node name="TiledMap" parent="." unique_id=367186168 instance=ExtResource("1_map")]
 position = Vector2(0, -246)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1527669729]
-zoom = Vector2(0.5, 0.5)
-limit_left = 0
-limit_top = -9999
-limit_right = 2560
-limit_bottom = 9999
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-
-[node name="Nini" parent="." unique_id=342520673 instance=ExtResource("2_nini")]
+[node name="Nini" parent="." instance=ExtResource("2_nini")]
 position = Vector2(240, -20)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://nini_player"]
+[gd_scene load_steps=16 format=3 uid="uid://nini_player"]
 
 [ext_resource type="Script" path="res://source/scripts/player/nini.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://ccx6ysy65ey0r" path="res://nini/Nini-1.png" id="2_texture"]
@@ -121,3 +121,13 @@ animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_nini")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.0, 2.0)
+limit_left = 0
+limit_top = -9999
+limit_right = 2560
+limit_bottom = 9999
+position_smoothing_enabled = true
+position_smoothing_speed = 5.0
+drag_horizontal_enabled = true
