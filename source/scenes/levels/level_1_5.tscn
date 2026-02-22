@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://level_1_2"]
+[gd_scene format=3 uid="uid://level_1_5"]
 
-[ext_resource type="PackedScene" path="res://maps/world1/level_1-2.tmx" id="1_map"]
+[ext_resource type="PackedScene" path="res://maps/world1/level_1-5.tmx" id="1_map"]
 
-[node name="Level1_2" type="Node2D"]
+[node name="Level1_5" type="Node2D"]
 
 [node name="TiledMap" parent="." instance=ExtResource("1_map")]
 position = Vector2(0, -246)

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="80" height="21" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="3">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="80" height="21" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="5">
  <tileset firstgid="1" source="../../assets/tilesets/tileset_grass_dirt/tileset_grass_dirt.tsx"/>
  <tileset firstgid="17" source="../../assets/tilesets/objects/portal/portal.tsx"/>
  <tileset firstgid="18" source="../../assets/tilesets/objects/bush/bush.tsx"/>
  <tileset firstgid="22" source="../../assets/tilesets/objects/tree/tree.tsx"/>
- <layer id="1" name="solid ground" width="80" height="21">
+ <layer id="1" name="solid_ground" width="80" height="21">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -54,12 +54,13 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="2" name="Portal" class="Portal" visible="0">
+ <objectgroup id="2" name="portal_r" class="Portal">
   <properties>
    <property name="target_scene" value="res://source/scenes/levels/level_1_2.tscn"/>
    <property name="target_spawn" value="left"/>
   </properties>
   <object id="2" x="1264" y="272.25" width="16" height="47.25"/>
+  <object id="3" x="611" y="467"/>
  </objectgroup>
  <layer id="6" name="decoration_bush" width="80" height="21">
   <data encoding="csv">
