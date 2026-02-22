@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 ## Nini - Player Controller
-## Walk left/right + jump. Position loaded from SaveManager on scene start.
+## Walk left/right + jump. Idle and walk animations.
 
 const SPEED = 80.0
 const JUMP_VELOCITY = -200.0
@@ -14,19 +14,14 @@ func _ready() -> void:
 	_apply_spawn()
 
 func _apply_spawn() -> void:
-	# If coming from a portal, use SceneTransition side
-	# Otherwise use SaveManager position (new game or continue)
 	var side = SceneTransition.next_spawn
 	if side != "":
-		# Coming through a portal - use left/right side of map
 		if side == "right":
 			global_position = Vector2(2480, SaveManager.position.y)
 		else:
 			global_position = Vector2(16, SaveManager.position.y)
-		# Clear so next load uses SaveManager
 		SceneTransition.next_spawn = ""
 	else:
-		# New game or Continue - use saved position
 		global_position = SaveManager.position
 
 func _physics_process(delta: float) -> void:
@@ -49,6 +44,6 @@ func _physics_process(delta: float) -> void:
 		sprite.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		sprite.play("walk")
+		sprite.play("idle")
 
 	move_and_slide()
