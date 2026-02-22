@@ -81,14 +81,14 @@
  <objectgroup id="6" name="portals">
   <object id="1" name="portal_enter" class="instance" x="0.73" y="247.45" width="16" height="48">
    <properties>
-    <property name="res_path" value="../../source/scenes/objects/portal.tscn"/>
+    <property name="res_path" type="file" value="../../source/scenes/objects/portal.tscn"/>
     <property name="target_scene" value="res://source/scenes/levels/level_1_3.tscn"/>
     <property name="target_spawn" value="right"/>
    </properties>
   </object>
   <object id="2" name="portal_exit" class="instance" x="1263.82" y="103.82" width="16" height="48">
    <properties>
-    <property name="res_path" value="../../source/scenes/objects/portal.tscn"/>
+    <property name="res_path" type="file" value="../../source/scenes/objects/portal.tscn"/>
     <property name="target_scene" value="res://source/scenes/levels/level_1_5.tscn"/>
     <property name="target_spawn" value="left"/>
    </properties>
