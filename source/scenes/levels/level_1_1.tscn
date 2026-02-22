@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dt2g7bysjtcq7" path="res://maps/world1/level_1-1.tmx" id="1_map"]
 [ext_resource type="PackedScene" path="res://source/scenes/player/nini.tscn" id="2_nini"]
+[ext_resource type="PackedScene" path="res://source/scenes/objects/portal.tscn" id="3_portal"]
 
 [node name="Level1_1" type="Node2D" unique_id=1208219098]
 position = Vector2(0, -210)
@@ -11,3 +12,8 @@ position = Vector2(0, 334)
 
 [node name="Nini" parent="." unique_id=522777548 instance=ExtResource("2_nini")]
 position = Vector2(240, 400)
+
+[node name="PortalExit" parent="." instance=ExtResource("3_portal")]
+position = Vector2(1264, 390)
+target_scene = "res://source/scenes/levels/level_1_2.tscn"
+target_spawn = "left"
