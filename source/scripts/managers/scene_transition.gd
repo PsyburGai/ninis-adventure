@@ -7,3 +7,4 @@ extends Node
 ##   Path: res://source/scripts/managers/scene_transition.gd
 
 var next_spawn: String = "left"   # "left" or "right"
+var menu_mode: String = "new_game"  # "new_game" or "load_game"

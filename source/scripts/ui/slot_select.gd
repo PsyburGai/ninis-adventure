@@ -1,9 +1,11 @@
 extends Control
 
-# Mode is either "new_game" or "load_game"
 var mode: String = "new_game"
 
 func _ready():
+	mode = SceneTransition.menu_mode
+	var title = "New Game" if mode == "new_game" else "Continue"
+	$VBoxContainer/Title.text = title
 	$VBoxContainer/BackButton.pressed.connect(_on_back_pressed)
 	for i in range(1, 4):
 		$VBoxContainer.get_node("Slot" + str(i) + "Button").pressed.connect(_on_slot_pressed.bind(i))
