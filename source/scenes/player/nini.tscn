@@ -129,4 +129,4 @@ limit_top = -10000
 limit_right = 1280
 limit_bottom = 480
 position_smoothing_enabled = false
-drag_horizontal_enabled = true
+drag_horizontal_enabled = false
