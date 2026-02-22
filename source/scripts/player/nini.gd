@@ -3,7 +3,7 @@ extends CharacterBody2D
 ## Nini - Player Controller
 ## Walk left/right + jump. Idle and walk animations.
 
-const SPEED = 80.0
+const SPEED = 240.0
 const JUMP_VELOCITY = -200.0
 const GRAVITY = 500.0
 
