@@ -79,7 +79,7 @@
 </data>
  </layer>
  <objectgroup id="9" name="portals">
-  <object id="1" name="portal_enter" class="instance" x="0.25" y="183.25" width="16" height="48">
+  <object id="1" name="portal_enter" class="instance" x="0.25" y="160.0" width="16" height="48">
    <properties>
     <property name="res_path" type="file" value="../../source/scenes/objects/portal.tscn"/>
     <property name="res_alignment" value="topleft"/>
@@ -87,7 +87,7 @@
     <property name="target_spawn" value="right"/>
    </properties>
   </object>
-  <object id="2" name="portal_exit" class="instance" x="1264" y="230.75" width="16" height="48">
+  <object id="2" name="portal_exit" class="instance" x="1264" y="160.0" width="16" height="48">
    <properties>
     <property name="res_path" type="file" value="../../source/scenes/objects/portal.tscn"/>
     <property name="res_alignment" value="topleft"/>

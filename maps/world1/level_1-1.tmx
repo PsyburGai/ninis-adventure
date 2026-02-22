@@ -55,7 +55,7 @@
 </data>
  </layer>
  <objectgroup id="2" name="portals">
-  <object id="2" name="portal_exit" type="instance" x="1264.5" y="263.75" width="16" height="48">
+  <object id="2" name="portal_exit" type="instance" x="1264.5" y="224.0" width="16" height="48">
    <properties>
     <property name="res_path" type="file" value="../../source/scenes/objects/portal.tscn"/>
     <property name="res_alignment" value="topleft"/>
