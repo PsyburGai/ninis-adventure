@@ -9,7 +9,6 @@ const GRAVITY = 500.0
 const CLIMB_SPEED = 80.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var camera: Camera2D = $Camera2D
 
 var _on_ladder: bool = false
 var _ladder_count: int = 0  # track overlapping ladders
@@ -100,11 +99,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	global_position.x = clamp(global_position.x, 0, 1280)
-	# Snap camera to whole pixels to prevent sub-pixel jitter on pixel art
-	camera.offset = Vector2(
-		round(global_position.x) - global_position.x,
-		round(global_position.y) - global_position.y
-	)
 
 func enter_ladder() -> void:
 	_ladder_count += 1
