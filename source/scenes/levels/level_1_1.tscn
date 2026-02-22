@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bpvehe4my53m3"]
 
 [ext_resource type="PackedScene" uid="uid://dt2g7bysjtcq7" path="res://maps/world1/level_1-1.tmx" id="1_map"]
+[ext_resource type="PackedScene" path="res://source/scenes/player/nini.tscn" id="2_nini"]
 
 [node name="Level1_1" type="Node2D" unique_id=1208219098]
 
@@ -15,3 +16,6 @@ limit_right = 2560
 limit_bottom = 9999
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
+
+[node name="Nini" parent="." instance=ExtResource("2_nini")]
+position = Vector2(16, -20)

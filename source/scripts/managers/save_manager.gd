@@ -48,7 +48,7 @@ func get_slot_summary(slot: int) -> Dictionary:
 func new_game(slot: int) -> void:
 	active_slot = slot
 	current_scene = "res://source/scenes/levels/level_1_1.tscn"
-	position = Vector2(16, 0)
+	position = Vector2(16, -20)
 	health = 5
 	items = []
 	equipment = {}
