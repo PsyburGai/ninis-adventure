@@ -104,14 +104,14 @@
 </data>
  </layer>
  <objectgroup id="6" name="portals">
-  <object id="1" name="portal_enter" class="instance" x="0" y="224" width="16" height="48">
+  <object id="1" name="portal_enter" class="instance" x="0.67" y="183.33" width="16" height="48">
    <properties>
     <property name="res_path" value="../../source/scenes/objects/portal.tscn"/>
     <property name="target_scene" value="res://source/scenes/levels/level_1_2.tscn"/>
     <property name="target_spawn" value="right"/>
    </properties>
   </object>
-  <object id="2" name="portal_exit" class="instance" x="1264" y="224" width="16" height="48">
+  <object id="2" name="portal_exit" class="instance" x="1264" y="183.33" width="16" height="48">
    <properties>
     <property name="res_path" value="../../source/scenes/objects/portal.tscn"/>
     <property name="target_scene" value="res://source/scenes/levels/level_1_4.tscn"/>
