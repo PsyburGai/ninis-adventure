@@ -17,5 +17,5 @@ limit_bottom = 9999
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 
-[node name="Nini" parent="." instance=ExtResource("2_nini")]
+[node name="Nini" parent="." unique_id=342520673 instance=ExtResource("2_nini")]
 position = Vector2(240, -20)
