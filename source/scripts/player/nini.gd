@@ -28,8 +28,8 @@ func _apply_spawn() -> void:
 		var portal = _find_portal(portal_name)
 		if portal:
 			# Spawn Nini just inside the portal, offset so she's not inside the collision
-			var offset_x = 24 if side == "left" else -24
-			global_position = Vector2(portal.global_position.x + offset_x, portal.global_position.y + 40)
+			var offset_x = 16 if side == "left" else -16
+			global_position = Vector2(portal.global_position.x + offset_x, portal.global_position.y + 36)
 		else:
 			# Fallback if portal not found
 			global_position = Vector2(40, 384) if side == "left" else Vector2(1240, 384)
