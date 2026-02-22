@@ -8,10 +8,6 @@
 atlas = ExtResource("3_idle")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_idle_1"]
-atlas = ExtResource("3_idle")
-region = Rect2(32, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_walk_0"]
 atlas = ExtResource("2_texture")
 region = Rect2(0, 0, 32, 32)
@@ -65,9 +61,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_idle_0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_idle_1")
 }],
 "loop": true,
 "name": &"idle",
