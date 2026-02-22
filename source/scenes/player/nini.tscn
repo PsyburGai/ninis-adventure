@@ -123,7 +123,7 @@ animation = &"idle"
 shape = SubResource("CapsuleShape2D_nini")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(0.4, 0.4)
 limit_left = 0
 limit_top = -9999
 limit_right = 2560
