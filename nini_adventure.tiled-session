@@ -3,13 +3,17 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "assets/tilesets/tileset_grass_dirt.tsx",
+    "activeFile": "maps/world1/level_1-1.tmx",
     "expandedProjectPaths": [
-        "tilesets",
-        "maps",
         "assets/tilesets",
+        "assets/tilesets/objects/portal",
+        "tilesets",
         ".",
         "assets",
+        "assets/tilesets/objects",
+        "assets/tilesets/tileset_grass_dirt",
+        "assets/tilesets/objects/bush",
+        "maps",
         "maps/world1"
     ],
     "fileStates": {
@@ -21,28 +25,48 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "assets/tilesets/objects/portal/portal.tsx": {
+            "scaleInDock": 3
+        },
         "assets/tilesets/tileset_bakery.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "assets/tilesets/tileset_grass_dirt.tsx": {
+            "scaleInDock": 4,
+            "scaleInEditor": 1
+        },
+        "assets/tilesets/tileset_grass_dirt/tileset_grass_dirt.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "maps/world1/level_1-1.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 926,
+                "y": 368.5
+            }
         }
     },
+    "last.externalTilesetPath": "C:/Game Project/Nini's Adventure/assets/tilesets/tileset_grass_dirt",
     "map.height": 21,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "map.width": 80,
     "openFiles": [
-        "assets/tilesets/tileset_grass_dirt.tsx"
+        "assets/tilesets/tileset_grass_dirt/tileset_grass_dirt.tsx",
+        "maps/world1/level_1-1.tmx"
     ],
     "project": "nini_adventure.tiled-project",
     "recentFiles": [
+        "assets/tilesets/tileset_grass_dirt/tileset_grass_dirt.tsx",
+        "maps/world1/level_1-1.tmx",
         "assets/tilesets/tileset_grass_dirt.tsx",
         "assets/tilesets/ladder.tsx",
         "assets/tilesets/bush.tsx",
         "assets/tilesets/tileset_bakery.tsx"
-    ]
+    ],
+    "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)"
 }

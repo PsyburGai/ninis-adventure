@@ -1,6 +1,8 @@
+class_name Portal
 extends Area2D
 
 ## Portal - teleports Nini to the target scene.
+## Class name allows Godot to auto-wire this script to any node with Class "Portal".
 ## Properties are set via the Tiled TMX object (target_scene, target_spawn).
 
 @export var target_scene: String = ""
