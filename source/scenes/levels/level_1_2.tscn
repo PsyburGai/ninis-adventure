@@ -6,12 +6,3 @@
 
 [node name="TiledMap" parent="." instance=ExtResource("1_map")]
 position = Vector2(0, 144)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
-limit_left = 0
-limit_top = -9999
-limit_right = 2560
-limit_bottom = 9999
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
