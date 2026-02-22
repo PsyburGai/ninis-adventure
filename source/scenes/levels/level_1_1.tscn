@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://level_1_1"]
 
+[ext_resource type="PackedScene" uid="uid://dt2g7bysjtcq7" path="res://maps/world1/level_1-1.tmx" id="1_map"]
+
 [node name="Level1_1" type="Node2D"]
 
-[node name="TiledMap" type="Node2D" parent="."]
-# After installing YATI: drag maps/world1/level_1-1.tmx from FileSystem onto this node
+[node name="TiledMap" parent="." instance=ExtResource("1_map")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = true
