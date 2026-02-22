@@ -1,17 +1,52 @@
 extends Node
 
-const SAVE_PATH = "user://save.json"
+const SAVE_DIR = "user://"
+const SAVE_PREFIX = "save_slot_"
+const SAVE_EXT = ".json"
+const MAX_SLOTS = 3
+
+# Active slot currently in use
+var active_slot: int = -1
 
 # Current game state held in memory
 var current_scene: String = "res://source/scenes/levels/level_1_1.tscn"
-var position: Vector2 = Vector2(16, 0)  # Far left of level_1-1
+var position: Vector2 = Vector2(16, 0)
 var health: int = 5
 var items: Array = []
 var equipment: Dictionary = {}
 var levels_completed: Array = []
 
-# --- New Game ---
-func new_game() -> void:
+# --- Get save file path for a slot ---
+func _slot_path(slot: int) -> String:
+	return SAVE_DIR + SAVE_PREFIX + str(slot) + SAVE_EXT
+
+# --- Check if a slot has a save ---
+func has_save(slot: int) -> bool:
+	return FileAccess.file_exists(_slot_path(slot))
+
+# --- Get save summary for slot display ---
+func get_slot_summary(slot: int) -> Dictionary:
+	if not has_save(slot):
+		return { "empty": true }
+	var file = FileAccess.open(_slot_path(slot), FileAccess.READ)
+	if not file:
+		return { "empty": true }
+	var json = JSON.new()
+	var err = json.parse(file.file_get_as_string())
+	file.close()
+	if err != OK:
+		return { "empty": true }
+	var data = json.get_data()
+	return {
+		"empty": false,
+		"scene": data.get("current_scene", "").get_file().get_basename(),
+		"timestamp": data.get("timestamp", "Unknown"),
+		"levels_completed": data.get("levels_completed", []).size()
+	}
+
+# --- New Game on a slot ---
+func new_game(slot: int) -> void:
+	active_slot = slot
 	current_scene = "res://source/scenes/levels/level_1_1.tscn"
 	position = Vector2(16, 0)
 	health = 5
@@ -21,26 +56,29 @@ func new_game() -> void:
 	save()
 	get_tree().change_scene_to_file(current_scene)
 
-# --- Save ---
+# --- Save to active slot ---
 func save() -> void:
+	if active_slot < 0:
+		return
 	var data = {
 		"current_scene": current_scene,
 		"position": { "x": position.x, "y": position.y },
 		"health": health,
 		"items": items,
 		"equipment": equipment,
-		"levels_completed": levels_completed
+		"levels_completed": levels_completed,
+		"timestamp": Time.get_datetime_string_from_system()
 	}
-	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	var file = FileAccess.open(_slot_path(active_slot), FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(data))
 		file.close()
 
-# --- Load ---
-func load_game() -> bool:
-	if not FileAccess.file_exists(SAVE_PATH):
+# --- Load a slot ---
+func load_game(slot: int) -> bool:
+	if not has_save(slot):
 		return false
-	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+	var file = FileAccess.open(_slot_path(slot), FileAccess.READ)
 	if not file:
 		return false
 	var json = JSON.new()
@@ -49,6 +87,7 @@ func load_game() -> bool:
 	if err != OK:
 		return false
 	var data = json.get_data()
+	active_slot = slot
 	current_scene = data.get("current_scene", "res://source/scenes/levels/level_1_1.tscn")
 	var pos = data.get("position", { "x": 16, "y": 0 })
 	position = Vector2(pos["x"], pos["y"])
@@ -59,15 +98,16 @@ func load_game() -> bool:
 	get_tree().change_scene_to_file(current_scene)
 	return true
 
-# --- Has Save ---
-func has_save() -> bool:
-	return FileAccess.file_exists(SAVE_PATH)
+# --- Delete a slot ---
+func delete_save(slot: int) -> void:
+	if has_save(slot):
+		DirAccess.remove_absolute(_slot_path(slot))
 
-# --- Update position (call this every few seconds or at checkpoints) ---
+# --- Update position (called every frame from Nini) ---
 func update_position(new_pos: Vector2) -> void:
 	position = new_pos
 
-# --- Update scene (call when entering a new level) ---
+# --- Update scene (called when entering a new level via portal) ---
 func update_scene(scene_path: String) -> void:
 	current_scene = scene_path
 	save()
