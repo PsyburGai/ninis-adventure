@@ -10,7 +10,7 @@ var active_slot: int = -1
 
 # Current game state held in memory
 var current_scene: String = "res://source/scenes/levels/level_1_1.tscn"
-var position: Vector2 = Vector2(240, 400)
+var position: Vector2 = Vector2(240, 384)
 var health: int = 5
 var items: Array = []
 var equipment: Dictionary = {}
@@ -49,7 +49,7 @@ func get_slot_summary(slot: int) -> Dictionary:
 func new_game(slot: int) -> void:
 	active_slot = slot
 	current_scene = "res://source/scenes/levels/level_1_1.tscn"
-	position = Vector2(240, 400)
+	position = Vector2(240, 384)
 	health = 5
 	items = []
 	equipment = {}
@@ -91,7 +91,7 @@ func load_game(slot: int) -> bool:
 	var data = json.get_data()
 	active_slot = slot
 	current_scene = data.get("current_scene", "res://source/scenes/levels/level_1_1.tscn")
-	var pos = data.get("position", { "x": 240, "y": 400 })
+	var pos = data.get("position", { "x": 240, "y": 384 })
 	position = Vector2(pos["x"], pos["y"])
 	health = data.get("health", 5)
 	items = data.get("items", [])

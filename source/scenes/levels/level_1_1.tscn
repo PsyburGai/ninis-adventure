@@ -10,9 +10,9 @@
 position = Vector2(0, 144)
 
 [node name="Nini" parent="." unique_id=522777548 instance=ExtResource("2_nini")]
-position = Vector2(240, 400)
+position = Vector2(240, 384)
 
 [node name="PortalExit" parent="." instance=ExtResource("3_portal")]
-position = Vector2(1264, 400)
+position = Vector2(1264, 368)
 target_scene = "res://source/scenes/levels/level_1_2.tscn"
 target_spawn = "left"
