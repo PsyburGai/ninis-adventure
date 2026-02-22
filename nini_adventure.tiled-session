@@ -3,17 +3,20 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "maps/world1/level_1-1.tmx",
+    "activeFile": "maps/world1/level_1-3.tmx",
     "expandedProjectPaths": [
+        "assets/tilesets/objects",
         "assets/tilesets",
-        "assets/tilesets/objects/portal",
+        "maps/world2",
         "tilesets",
         ".",
         "assets",
-        "assets/tilesets/objects",
         "assets/tilesets/tileset_grass_dirt",
-        "assets/tilesets/objects/bush",
+        "nini",
         "maps",
+        "assets/tilesets/objects/tree",
+        "assets/tilesets/objects/portal",
+        "assets/tilesets/tileset_water",
         "maps/world1"
     ],
     "fileStates": {
@@ -26,6 +29,7 @@
             "scaleInEditor": 1
         },
         "assets/tilesets/objects/bush/bush.tsx": {
+            "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "assets/tilesets/objects/ladder/ladder.tsx": {
@@ -37,6 +41,7 @@
             "scaleInEditor": 1
         },
         "assets/tilesets/objects/tree/tree.tsx": {
+            "scaleInDock": 1,
             "scaleInEditor": 5.5
         },
         "assets/tilesets/tileset_bakery.tsx": {
@@ -51,44 +56,63 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "assets/tilesets/tileset_water/tileset_water.tsx": {
+            "scaleInDock": 4,
+            "scaleInEditor": 5.5
+        },
         "maps/world1/level_1-1.tmx": {
-            "scale": 2,
-            "selectedLayer": -1,
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 1.5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 1260.75,
-                "y": 243.25
+                "x": 859,
+                "y": 285.6666666666667
             }
         },
         "maps/world1/level_1-2.tmx": {
-            "scale": 1.5,
-            "selectedLayer": -1,
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 1231,
-                "y": 267.6666666666667
+                "x": 665.5,
+                "y": 220.5
             }
         },
         "maps/world1/level_1-3.tmx": {
-            "scale": 3,
-            "selectedLayer": -1,
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 1.5,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 1273.5,
-                "y": 262.8333333333333
+                "x": 915,
+                "y": 196.3333333333333
             }
         },
         "maps/world1/level_1-4.tmx": {
-            "scale": 1.5,
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 1170.3333333333333,
-                "y": 319
+                "x": 1094.75,
+                "y": 214.25
             }
         },
         "maps/world1/level_1-5.tmx": {
+            "expandedObjectLayers": [
+                3
+            ],
             "scale": 4,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1284.625,
-                "y": 210.875
+                "x": 640.125,
+                "y": 168.125
             }
         },
         "maps/world2/level_2-1.tmx": {
@@ -107,21 +131,29 @@
     "map.tileWidth": 16,
     "map.width": 80,
     "openFiles": [
+        "maps/world1/level_1-1.tmx",
+        "maps/world1/level_1-2.tmx",
+        "maps/world1/level_1-3.tmx",
+        "maps/world1/level_1-4.tmx",
+        "maps/world1/level_1-5.tmx",
         "assets/tilesets/tileset_grass_dirt/tileset_grass_dirt.tsx",
-        "maps/world1/level_1-1.tmx"
+        "assets/tilesets/tileset_water/tileset_water.tsx",
+        "maps/world2/level_2-1.tmx"
     ],
     "project": "nini_adventure.tiled-project",
     "recentFiles": [
+        "maps/world1/level_1-1.tmx",
+        "maps/world1/level_1-2.tmx",
+        "maps/world2/level_2-1.tmx",
+        "assets/tilesets/tileset_water/tileset_water.tsx",
         "assets/tilesets/tileset_grass_dirt/tileset_grass_dirt.tsx",
+        "maps/world1/level_1-5.tmx",
+        "maps/world1/level_1-4.tmx",
+        "maps/world1/level_1-3.tmx",
         "assets/tilesets/objects/portal/portal.tsx",
         "assets/tilesets/objects/tree/tree.tsx",
         "assets/tilesets/objects/ladder/ladder.tsx",
-        "assets/tilesets/objects/bush/bush.tsx",
-        "maps/world1/level_1-1.tmx",
-        "assets/tilesets/tileset_grass_dirt.tsx",
-        "assets/tilesets/ladder.tsx",
-        "assets/tilesets/bush.tsx",
-        "assets/tilesets/tileset_bakery.tsx"
+        "assets/tilesets/objects/bush/bush.tsx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)"
 }
