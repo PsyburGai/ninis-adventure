@@ -2,17 +2,12 @@ class_name Portal
 extends Area2D
 
 ## Portal - teleports Nini to the target scene when player presses UP.
-## YATI sets custom properties via _set() since it has no built-in handler for them.
+## Uses overlaps_body() polling instead of signals - more reliable when
+## instantiated dynamically by YATI as a child of TiledMap.
 
 @export var target_scene: String = ""
 @export var target_spawn: String = "left"
 @export var is_end_portal: bool = false
-
-var player_inside: bool = false
-
-func _ready():
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
 
 # YATI calls set() for custom Tiled properties - catch them here
 func _set(property: StringName, value: Variant) -> bool:
@@ -28,23 +23,18 @@ func _set(property: StringName, value: Variant) -> bool:
 			return true
 	return false
 
-func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("player"):
-		player_inside = true
-
-func _on_body_exited(body: Node) -> void:
-	if body.is_in_group("player"):
-		player_inside = false
-
 func _process(_delta: float) -> void:
-	if not player_inside:
+	if not Input.is_action_just_pressed("move_up"):
 		return
-	if Input.is_action_just_pressed("move_up"):
-		_enter_portal()
+	# Poll all overlapping bodies directly - no signal dependency
+	for body in get_overlapping_bodies():
+		if body.is_in_group("player"):
+			_enter_portal()
+			return
 
 func _enter_portal() -> void:
 	if target_scene == "":
-		push_warning(name + ": no target_scene set!")
+		push_warning(name + ": no target_scene set! Was YATI able to set properties?")
 		return
 	SceneTransition.next_spawn = target_spawn
 	SaveManager.update_scene(target_scene)
