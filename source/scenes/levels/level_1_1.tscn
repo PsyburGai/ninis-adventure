@@ -17,5 +17,3 @@ limit_right = 2560
 limit_top = -9999
 limit_bottom = 9999
 
-[node name="SpawnRight" type="Marker2D" parent="."]
-position = Vector2(2480, 100)
