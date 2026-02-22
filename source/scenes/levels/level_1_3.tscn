@@ -5,7 +5,7 @@
 [node name="Level1_3" type="Node2D"]
 
 [node name="TiledMap" parent="." instance=ExtResource("1_map")]
-position = Vector2(0, -336)
+position = Vector2(0, 144)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
