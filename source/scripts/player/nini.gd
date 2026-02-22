@@ -20,13 +20,34 @@ func _ready() -> void:
 func _apply_spawn() -> void:
 	var side = SceneTransition.next_spawn
 	if side != "":
-		if side == "right":
-			global_position = Vector2(1240, 384)
-		else:
-			global_position = Vector2(40, 384)
 		SceneTransition.next_spawn = ""
+		# Wait one frame for YATI portals to be fully instantiated
+		await get_tree().process_frame
+		# Find the portal on the arrival side and spawn next to it
+		var portal_name = "portal_enter" if side == "left" else "portal_exit"
+		var portal = _find_portal(portal_name)
+		if portal:
+			# Spawn Nini just inside the portal, offset so she's not inside the collision
+			var offset_x = 24 if side == "left" else -24
+			global_position = Vector2(portal.global_position.x + offset_x, portal.global_position.y + 40)
+		else:
+			# Fallback if portal not found
+			global_position = Vector2(40, 384) if side == "left" else Vector2(1240, 384)
 	else:
 		global_position = SaveManager.position
+
+func _find_portal(portal_name: String) -> Node:
+	# Search entire scene tree for the portal by name
+	return _search_node(get_tree().root, portal_name)
+
+func _search_node(node: Node, target_name: String) -> Node:
+	if node.name == target_name:
+		return node
+	for child in node.get_children():
+		var result = _search_node(child, target_name)
+		if result:
+			return result
+	return null
 
 func _physics_process(delta: float) -> void:
 	SaveManager.update_position(global_position)
