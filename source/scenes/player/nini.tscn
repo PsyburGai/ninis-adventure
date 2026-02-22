@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://nini_player"]
+[gd_scene load_steps=18 format=3 uid="uid://nini_player"]
 
 [ext_resource type="Script" path="res://source/scripts/player/nini.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://ccx6ysy65ey0r" path="res://nini/Nini-1.png" id="2_texture"]
 [ext_resource type="Texture2D" path="res://nini/nini_idle.png" id="3_idle"]
+[ext_resource type="Texture2D" path="res://assets/sprites/sword.png" id="4_sword"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_idle_0"]
 atlas = ExtResource("3_idle")
@@ -112,6 +113,9 @@ animations = [{
 radius = 7.0
 height = 20.0
 
+[sub_resource type="RectangleShape2D" id="CapsuleShape2D_sword"]
+size = Vector2(20, 6)
+
 [node name="Nini" type="CharacterBody2D"]
 script = ExtResource("1_script")
 
@@ -131,3 +135,16 @@ limit_bottom = 480
 position_smoothing_enabled = true
 position_smoothing_speed = 5.0
 drag_horizontal_enabled = true
+
+[node name="Sword" type="Sprite2D" parent="."]
+texture = ExtResource("4_sword")
+visible = false
+position = Vector2(8, -12)
+centered = true
+
+[node name="SwordHitbox" type="Area2D" parent="Sword"]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword/SwordHitbox"]
+shape = SubResource("CapsuleShape2D_sword")
+

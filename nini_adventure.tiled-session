@@ -61,14 +61,11 @@
             "scaleInEditor": 5.5
         },
         "maps/world1/level_1-1.tmx": {
-            "expandedObjectLayers": [
-                2
-            ],
             "scale": 1.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 859,
-                "y": 285.6666666666667
+                "x": 1065.6666666666665,
+                "y": -73
             }
         },
         "maps/world1/level_1-2.tmx": {
@@ -105,14 +102,11 @@
             }
         },
         "maps/world1/level_1-5.tmx": {
-            "expandedObjectLayers": [
-                3
-            ],
-            "scale": 4,
+            "scale": 3,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 640.125,
-                "y": 168.125
+                "x": 1089.5,
+                "y": 182.16666666666663
             }
         },
         "maps/world2/level_2-1.tmx": {
