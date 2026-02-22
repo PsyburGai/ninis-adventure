@@ -23,6 +23,7 @@ config/icon="res://assets/ui/icon.png"
 [autoload]
 
 SceneTransition="*uid://pmhqe225pbvq"
+SaveManager="*res://source/scripts/managers/save_manager.gd"
 
 [display]
 

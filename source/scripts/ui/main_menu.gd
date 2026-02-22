@@ -1,11 +1,18 @@
 extends Control
 
 func _ready():
-	$VBoxContainer/StartButton.pressed.connect(_on_start_pressed)
+	$VBoxContainer/StartButton.pressed.connect(_on_new_game_pressed)
+	$VBoxContainer/ContinueButton.pressed.connect(_on_continue_pressed)
 	$VBoxContainer/QuitButton.pressed.connect(_on_quit_pressed)
 
-func _on_start_pressed():
-	get_tree().change_scene_to_file("res://source/scenes/levels/level_1_1.tscn")
+	# Only show Continue if a save file exists
+	$VBoxContainer/ContinueButton.visible = SaveManager.has_save()
+
+func _on_new_game_pressed():
+	SaveManager.new_game()
+
+func _on_continue_pressed():
+	SaveManager.load_game()
 
 func _on_quit_pressed():
 	get_tree().quit()
