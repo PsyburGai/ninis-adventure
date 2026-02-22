@@ -49,4 +49,4 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	# Clamp to level bounds so Nini cannot walk off the edges
-	global_position.x = clamp(global_position.x, 0, 2560)
+	global_position.x = clamp(global_position.x, 0, 1280)
