@@ -2,6 +2,7 @@ class_name Portal
 extends Area2D
 
 ## Portal - teleports Nini to the target scene when player presses UP.
+## YATI sets custom properties via _set() since it has no built-in handler for them.
 
 @export var target_scene: String = ""
 @export var target_spawn: String = "left"
@@ -12,6 +13,20 @@ var player_inside: bool = false
 func _ready():
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+
+# YATI calls set() for custom Tiled properties - catch them here
+func _set(property: StringName, value: Variant) -> bool:
+	match str(property):
+		"target_scene":
+			target_scene = str(value)
+			return true
+		"target_spawn":
+			target_spawn = str(value)
+			return true
+		"is_end_portal":
+			is_end_portal = bool(value)
+			return true
+	return false
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
