@@ -5,6 +5,12 @@
 
 [node name="Level1_1" type="Node2D" unique_id=1208219098]
 
+[node name="Background" type="ColorRect" parent="."]
+z_index = -10
+position = Vector2(-500, -600)
+size = Vector2(3000, 1500)
+color = Color(0.53, 0.81, 0.98, 1)
+
 [node name="TiledMap" parent="." unique_id=367186168 instance=ExtResource("1_map")]
 position = Vector2(0, -246)
 
