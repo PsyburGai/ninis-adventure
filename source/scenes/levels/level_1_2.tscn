@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://level_1_2"]
 
-[ext_resource type="PackedScene" path="res://source/scenes/player/nini.tscn" id="1_nini"]
-
 [node name="Level1_2" type="Node2D"]
 
 [node name="TiledMap" type="Node2D" parent="."]
@@ -18,10 +16,5 @@ limit_right = 2560
 limit_top = -9999
 limit_bottom = 9999
 
-[node name="SpawnLeft" type="Marker2D" parent="."]
-position = Vector2(32, 100)
-
 [node name="SpawnRight" type="Marker2D" parent="."]
 position = Vector2(2480, 100)
-
-[node name="Nini" parent="." instance=ExtResource("1_nini")]
