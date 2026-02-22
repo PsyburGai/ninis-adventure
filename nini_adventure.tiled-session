@@ -25,8 +25,19 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "assets/tilesets/objects/bush/bush.tsx": {
+            "scaleInEditor": 1
+        },
+        "assets/tilesets/objects/ladder/ladder.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "assets/tilesets/objects/portal/portal.tsx": {
-            "scaleInDock": 3
+            "scaleInDock": 3,
+            "scaleInEditor": 1
+        },
+        "assets/tilesets/objects/tree/tree.tsx": {
+            "scaleInEditor": 5.5
         },
         "assets/tilesets/tileset_bakery.tsx": {
             "scaleInDock": 1,
@@ -41,11 +52,46 @@
             "scaleInEditor": 1
         },
         "maps/world1/level_1-1.tmx": {
-            "scale": 1,
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 926,
-                "y": 368.5
+                "x": 577.9999999999999,
+                "y": 55.33333333333337
+            }
+        },
+        "maps/world1/level_1-2.tmx": {
+            "scale": 1,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 446.5,
+                "y": 279.5
+            }
+        },
+        "maps/world1/level_1-3.tmx": {
+            "scale": 1,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 660.5,
+                "y": 303.5
+            }
+        },
+        "maps/world1/level_1-4.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 610.3333333333333,
+                "y": 291.6666666666667
+            }
+        },
+        "maps/world1/level_1-5.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 557,
+                "y": 169
             }
         }
     },
@@ -62,6 +108,10 @@
     "project": "nini_adventure.tiled-project",
     "recentFiles": [
         "assets/tilesets/tileset_grass_dirt/tileset_grass_dirt.tsx",
+        "assets/tilesets/objects/portal/portal.tsx",
+        "assets/tilesets/objects/tree/tree.tsx",
+        "assets/tilesets/objects/ladder/ladder.tsx",
+        "assets/tilesets/objects/bush/bush.tsx",
         "maps/world1/level_1-1.tmx",
         "assets/tilesets/tileset_grass_dirt.tsx",
         "assets/tilesets/ladder.tsx",
