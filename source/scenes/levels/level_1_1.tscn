@@ -8,5 +8,5 @@
 [node name="TiledMap" parent="." unique_id=367186168 instance=ExtResource("1_map")]
 position = Vector2(0, -246)
 
-[node name="Nini" parent="." instance=ExtResource("2_nini")]
+[node name="Nini" parent="." unique_id=522777548 instance=ExtResource("2_nini")]
 position = Vector2(240, -20)

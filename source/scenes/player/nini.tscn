@@ -125,9 +125,9 @@ shape = SubResource("CapsuleShape2D_nini")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 limit_left = 0
-limit_top = -9999
+limit_top = -246
 limit_right = 2560
-limit_bottom = 9999
+limit_bottom = 138
 position_smoothing_enabled = true
 position_smoothing_speed = 5.0
 drag_horizontal_enabled = true
