@@ -55,11 +55,11 @@
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 0.75,
-            "selectedLayer": 2,
+            "scale": 4,
+            "selectedLayer": -1,
             "viewCenter": {
-                "x": 471.33333333333337,
-                "y": 256.66666666666663
+                "x": 487.375,
+                "y": 313.875
             }
         },
         "maps/world1/level_1-2.tmx": {
@@ -68,7 +68,7 @@
                 9
             ],
             "scale": 1.5,
-            "selectedLayer": 4,
+            "selectedLayer": -1,
             "viewCenter": {
                 "x": 722.3333333333333,
                 "y": 169.66666666666669

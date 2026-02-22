@@ -78,20 +78,6 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="9" name="portal_l">
-  <properties>
-   <property name="target_scene" value="res://source/scenes/levels/level_1_1.tscn"/>
-   <property name="target_spawn" value="right"/>
-  </properties>
-  <object id="1" x="0.5" y="192" width="15" height="46.5"/>
- </objectgroup>
- <objectgroup id="10" name="portal_r">
-  <properties>
-   <property name="target_scene" value="res://source/scenes/levels/level_1_3.tscn"/>
-   <property name="target_spawn" value="left"/>
-  </properties>
-  <object id="2" x="1264" y="239.5" width="16.5" height="47.5"/>
- </objectgroup>
  <layer id="7" name="decoration_bush" width="80" height="21">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

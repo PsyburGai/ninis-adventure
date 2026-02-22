@@ -1,23 +1,23 @@
-[gd_scene format=3 uid="uid://level_1_4"]
+[gd_scene format=3 uid="uid://sdko6lkmqf07"]
 
-[ext_resource type="PackedScene" path="res://maps/world1/level_1-4.tmx" id="1_map"]
+[ext_resource type="PackedScene" uid="uid://g7yvblmy7n5i" path="res://maps/world1/level_1-4.tmx" id="1_map"]
 [ext_resource type="PackedScene" path="res://source/scenes/player/nini.tscn" id="2_nini"]
 [ext_resource type="PackedScene" path="res://source/scenes/objects/portal.tscn" id="3_portal"]
 
-[node name="Level1_4" type="Node2D"]
+[node name="Level1_4" type="Node2D" unique_id=1392220251]
 
-[node name="TiledMap" parent="." instance=ExtResource("1_map")]
+[node name="TiledMap" parent="." unique_id=1390494685 instance=ExtResource("1_map")]
 position = Vector2(0, 144)
 
-[node name="Nini" parent="." instance=ExtResource("2_nini")]
+[node name="Nini" parent="." unique_id=1156866490 instance=ExtResource("2_nini")]
 position = Vector2(16, 384)
 
-[node name="PortalEnter" parent="." instance=ExtResource("3_portal")]
-position = Vector2(16, 368)
+[node name="PortalEnter" parent="." unique_id=1882270381 instance=ExtResource("3_portal")]
+position = Vector2(8, 424)
 target_scene = "res://source/scenes/levels/level_1_3.tscn"
 target_spawn = "right"
 
-[node name="PortalExit" parent="." instance=ExtResource("3_portal")]
-position = Vector2(1264, 368)
+[node name="PortalExit" parent="." unique_id=1911375531 instance=ExtResource("3_portal")]
+position = Vector2(1272, 275)
 target_scene = "res://source/scenes/levels/level_1_5.tscn"
 target_spawn = "left"

@@ -17,9 +17,11 @@ func _apply_spawn() -> void:
 	var side = SceneTransition.next_spawn
 	if side != "":
 		if side == "right":
-			global_position = Vector2(1240, SaveManager.position.y)
+			# Entering from right portal (x=1264), spawn just left of it
+			global_position = Vector2(1240, 384)
 		else:
-			global_position = Vector2(40, SaveManager.position.y)
+			# Entering from left portal (x=16), spawn just right of it
+			global_position = Vector2(40, 384)
 		SceneTransition.next_spawn = ""
 	else:
 		global_position = SaveManager.position
