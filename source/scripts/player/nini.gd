@@ -131,7 +131,7 @@ func _start_attack() -> void:
 	sword_sprite.visible = true
 	sword_hitbox.monitoring = false
 	# Load the attack spritesheet into sprite (swap temporarily)
-	var attack_tex = load("res://assets/sprites/nini_attack.png")
+	var attack_tex = load("res://assets/sprites/nini/nini_attack.png")
 	sprite.sprite_frames.add_animation("attack") if not sprite.sprite_frames.has_animation("attack") else null
 	# Position sword based on facing direction
 	sword_sprite.flip_h = sprite.flip_h
