@@ -52,47 +52,32 @@
             "scaleInEditor": 1
         },
         "maps/world1/level_1-1.tmx": {
-            "expandedObjectLayers": [
-                2
-            ],
-            "scale": 4,
+            "scale": 2,
             "selectedLayer": -1,
             "viewCenter": {
-                "x": 487.375,
-                "y": 313.875
+                "x": 1053.25,
+                "y": 242.25
             }
         },
         "maps/world1/level_1-2.tmx": {
-            "expandedObjectLayers": [
-                10,
-                9
-            ],
             "scale": 1.5,
             "selectedLayer": -1,
             "viewCenter": {
-                "x": 722.3333333333333,
-                "y": 169.66666666666669
+                "x": 1362.3333333333333,
+                "y": 201
             }
         },
         "maps/world1/level_1-3.tmx": {
-            "expandedObjectLayers": [
-                6,
-                7
-            ],
             "scale": 3,
-            "selectedLayer": 5,
+            "selectedLayer": -1,
             "viewCenter": {
-                "x": 1162.1666666666665,
-                "y": 208.5
+                "x": -113.83333333333334,
+                "y": 225.5
             }
         },
         "maps/world1/level_1-4.tmx": {
-            "expandedObjectLayers": [
-                6,
-                7
-            ],
             "scale": 3,
-            "selectedLayer": 4,
+            "selectedLayer": -1,
             "viewCenter": {
                 "x": 167.83333333333331,
                 "y": 215.16666666666663
@@ -104,7 +89,7 @@
                 4
             ],
             "scale": 0.75,
-            "selectedLayer": 2,
+            "selectedLayer": 0,
             "viewCenter": {
                 "x": 619.3333333333333,
                 "y": 175.33333333333337

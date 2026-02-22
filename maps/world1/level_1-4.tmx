@@ -78,19 +78,21 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="6" name="portal_l">
-  <properties>
-   <property name="target_scene" value="res://source/scenes/levels/level_1_3.tscn"/>
-   <property name="target_spawn" value="right"/>
-  </properties>
-  <object id="1" x="0" y="256.333" width="16" height="47.3333"/>
- </objectgroup>
- <objectgroup id="7" name="portal_r">
-  <properties>
-   <property name="target_scene" value="res://source/scenes/levels/level_1_5.tscn"/>
-   <property name="target_spawn" value="left"/>
-  </properties>
-  <object id="2" x="1264.33" y="111.667" width="15.6667" height="49"/>
+ <objectgroup id="6" name="portals">
+  <object id="1" name="portal_enter" class="instance" x="0" y="256" width="16" height="48">
+   <properties>
+    <property name="res_path" value="../../source/scenes/objects/portal.tscn"/>
+    <property name="target_scene" value="res://source/scenes/levels/level_1_3.tscn"/>
+    <property name="target_spawn" value="right"/>
+   </properties>
+  </object>
+  <object id="2" name="portal_exit" class="instance" x="1264" y="256" width="16" height="48">
+   <properties>
+    <property name="res_path" value="../../source/scenes/objects/portal.tscn"/>
+    <property name="target_scene" value="res://source/scenes/levels/level_1_5.tscn"/>
+    <property name="target_spawn" value="left"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer id="3" name="decoration_tree" width="80" height="21">
   <data encoding="csv">
