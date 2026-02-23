@@ -1,6 +1,8 @@
 extends Control
 
 var mode: String = "new_game"
+var _buttons: Array = []
+var _selected: int = 0
 
 func _ready():
 	mode = SceneTransition.menu_mode
@@ -11,6 +13,36 @@ func _ready():
 		$VBoxContainer.get_node("Slot" + str(i) + "Button").pressed.connect(_on_slot_pressed.bind(i))
 		$VBoxContainer.get_node("Slot" + str(i) + "Delete").pressed.connect(_on_delete_pressed.bind(i))
 	_refresh_slots()
+	_build_button_list()
+	_highlight(_selected)
+
+func _build_button_list() -> void:
+	_buttons.clear()
+	for child in $VBoxContainer.get_children():
+		if child is Button and child.visible:
+			_buttons.append(child)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_down"):
+		_selected = (_selected + 1) % _buttons.size()
+		_highlight(_selected)
+
+	elif event.is_action_pressed("ui_up"):
+		_selected = (_selected - 1 + _buttons.size()) % _buttons.size()
+		_highlight(_selected)
+
+	elif event.is_action_pressed("ui_accept"):
+		_buttons[_selected].emit_signal("pressed")
+
+	elif event.is_action_pressed("ui_cancel"):
+		_on_back_pressed()
+
+func _highlight(index: int) -> void:
+	for i in _buttons.size():
+		if i == index:
+			_buttons[i].modulate = Color(1.4, 1.4, 0.3)
+		else:
+			_buttons[i].modulate = Color(1, 1, 1)
 
 func set_mode(m: String) -> void:
 	mode = m
@@ -44,6 +76,9 @@ func _on_slot_pressed(slot: int) -> void:
 func _on_delete_pressed(slot: int) -> void:
 	SaveManager.delete_save(slot)
 	_refresh_slots()
+	_build_button_list()
+	_selected = clamp(_selected, 0, _buttons.size() - 1)
+	_highlight(_selected)
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://source/scenes/levels/main_menu.tscn")

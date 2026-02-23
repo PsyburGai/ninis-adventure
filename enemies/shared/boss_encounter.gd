@@ -1,140 +1,220 @@
-extends Area2D
+extends CharacterBody2D
 class_name BossEncounter
 
-# Boss stats - much stronger than regular enemies
+## Real-time overworld boss.
+## Same combat model as EnemyEncounter but with higher stats,
+## a phase system, and a persistent defeated state.
+## No battle screen — all combat happens in the level.
+
 @export var boss_name: String = "Cake Monster"
 @export var boss_max_hp: int = 100
 @export var boss_attack: int = 12
 @export var boss_defense: int = 8
-@export var boss_speed: int = 6
 @export var boss_xp_reward: int = 100
+@export var contact_damage_cooldown: float = 1.0
+@export var knockback_force: float = 240.0
 
-# Boss features
-@export var boss_music: AudioStream = null  # Optional boss music
-@export var is_defeated: bool = false  # Track if boss was defeated
+# Phase 2 triggers at this HP fraction (0.5 = 50%)
+@export var phase2_threshold: float = 0.5
+@export var phase2_walk_speed_multiplier: float = 1.6
 
+# Walking
+@export var walk_speed: float = 20.0
+@export var walk_min_x: float = -999999.0
+@export var walk_max_x: float = 999999.0
+
+const GRAVITY = 500.0
+const HIT_FLASH_DURATION: float = 0.1
+const HIT_FLASHES: int = 4
+
+var current_hp: int
 var is_active: bool = true
-var battle_result: String = ""
+var is_defeated: bool = false
+var in_phase2: bool = false
+var _contact_timer: float = 0.0
+var _is_flashing: bool = false
 
-# Walking animation variables
 var is_walking: bool = false
-var walk_direction: int = 1  # 1 = right, -1 = left
-var strides_remaining: int = 0
-var current_frame: int = 0
-var walk_speed: float = 20.0
+var walk_direction: int = 1
+var _current_walk_speed: float
+
+var sword_receiver: Area2D = null
 
 @onready var sprite: Sprite2D = $Sprite2D
 
-func _ready():
-	body_entered.connect(_on_body_entered)
-	# Check if boss already defeated - if so, remove it
+func _ready() -> void:
+	current_hp = boss_max_hp
+	_current_walk_speed = walk_speed
+	add_to_group("enemies")
+
 	if is_defeated:
 		queue_free()
 		return
 
-	print("Boss spawned at position: ", position)
+	# Build sword-hit receiver
+	sword_receiver = Area2D.new()
+	sword_receiver.name = "SwordReceiver"
+	sword_receiver.collision_layer = 0
+	sword_receiver.collision_mask = 4  # Must match SwordHitbox layer in Nini
+	var recv_shape = CollisionShape2D.new()
+	var rect = RectangleShape2D.new()
+	rect.size = Vector2(28, 28)
+	recv_shape.shape = rect
+	sword_receiver.add_child(recv_shape)
+	add_child(sword_receiver)
+	sword_receiver.area_entered.connect(_on_sword_hit)
 
-	# Start walking animation (call without await so it runs in background)
 	_start_walking_cycle()
 
-func _start_walking_cycle():
-	print("Boss walking cycle started!")
-	while not is_defeated:
-		# Random number of strides (3-10)
-		strides_remaining = randi_range(3, 10)
-		is_walking = true
-		print("Boss starting to walk: %d strides" % strides_remaining)
+# ── Physics ───────────────────────────────────────────────────────────────────
 
-		# Walk for the random number of strides
-		for stride in range(strides_remaining):
+func _physics_process(delta: float) -> void:
+	if not is_active:
+		return
+
+	if not is_on_floor():
+		velocity.y += GRAVITY * delta
+
+	move_and_slide()
+
+	if _contact_timer > 0.0:
+		_contact_timer -= delta
+
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider and collider.is_in_group("player") and _contact_timer <= 0.0:
+			_deal_contact_damage(collider)
+
+# ── Receiving sword hits ──────────────────────────────────────────────────────
+
+func _on_sword_hit(area: Area2D) -> void:
+	if not is_active or is_defeated:
+		return
+	if not area.name == "SwordHitbox":
+		return
+
+	var raw_damage: int = 10
+	var player = area.get_parent()
+	if player and player.has_method("get_attack_power"):
+		raw_damage = player.get_attack_power()
+
+	var damage = max(1, raw_damage - boss_defense)
+	_take_damage(damage)
+
+# Public interface called by Nini's _deal_sword_damage()
+func take_damage(amount: int, _source: Node = null) -> void:
+	var damage = max(1, amount - boss_defense)
+	_take_damage(damage)
+
+func _take_damage(amount: int) -> void:
+	current_hp -= amount
+	if not _is_flashing:
+		_flash_hit()
+
+	# Enter phase 2 when HP crosses threshold
+	if not in_phase2 and current_hp <= int(boss_max_hp * phase2_threshold):
+		_enter_phase2()
+
+	if current_hp <= 0:
+		_die()
+
+# ── Phase 2 ───────────────────────────────────────────────────────────────────
+
+func _enter_phase2() -> void:
+	in_phase2 = true
+	_current_walk_speed = walk_speed * phase2_walk_speed_multiplier
+	# Visual cue — tint the boss slightly red
+	if sprite:
+		sprite.modulate = Color(1.0, 0.7, 0.7)
+
+# ── Contact damage ────────────────────────────────────────────────────────────
+
+func _deal_contact_damage(player: Node) -> void:
+	_contact_timer = contact_damage_cooldown
+	if player.has_method("take_damage"):
+		player.take_damage(boss_attack, _knockback_direction(player))
+
+func _knockback_direction(player: Node) -> Vector2:
+	var dir = (player.global_position - global_position).normalized()
+	return Vector2(dir.x, -0.5).normalized() * knockback_force
+
+# ── Death ─────────────────────────────────────────────────────────────────────
+
+func _die() -> void:
+	is_active = false
+	is_defeated = true
+
+	var players = get_tree().get_nodes_in_group("player")
+	for p in players:
+		if p.has_method("gain_xp"):
+			p.gain_xp(boss_xp_reward)
+
+	await _play_death_effect()
+	queue_free()
+
+func _play_death_effect() -> void:
+	# Dramatic multi-flash then scale down
+	if sprite:
+		for _i in range(6):
+			sprite.modulate = Color(1, 1, 0.1)
+			await get_tree().create_timer(0.07).timeout
+			sprite.modulate = Color(1, 0.2, 0.2)
+			await get_tree().create_timer(0.07).timeout
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.4, 0.1), 0.1)
+	tween.tween_property(self, "scale", Vector2.ZERO, 0.1)
+	await tween.finished
+
+# ── Hit flash ─────────────────────────────────────────────────────────────────
+
+func _flash_hit() -> void:
+	_is_flashing = true
+	if not sprite:
+		_is_flashing = false
+		return
+	var original = sprite.modulate
+	for _i in range(HIT_FLASHES):
+		sprite.modulate = Color(1, 0.15, 0.15)
+		await get_tree().create_timer(HIT_FLASH_DURATION).timeout
+		sprite.modulate = original
+		await get_tree().create_timer(HIT_FLASH_DURATION).timeout
+	_is_flashing = false
+
+# ── Walking AI ────────────────────────────────────────────────────────────────
+
+func _start_walking_cycle() -> void:
+	while is_instance_valid(self) and not is_defeated:
+		var strides_remaining = randi_range(3, 10)
+		is_walking = true
+		if sprite:
+			sprite.frame = 1
+
+		for _stride in range(strides_remaining):
 			await _walk_one_stride()
 
-		# Stop walking (idle)
 		is_walking = false
-		sprite.frame = 0  # Idle frame
-		print("Boss stopped walking, pausing...")
+		if sprite:
+			sprite.frame = 0
 
-		# Random pause (50% chance of 1 second pause, otherwise 0.3 seconds)
 		var pause_time = 1.0 if randf() > 0.5 else 0.3
 		await get_tree().create_timer(pause_time).timeout
 
-		# Change direction randomly
 		if randf() > 0.5:
 			walk_direction *= -1
-			sprite.flip_h = walk_direction < 0
-			print("Boss changed direction to: ", "left" if walk_direction < 0 else "right")
+			if sprite:
+				sprite.flip_h = walk_direction < 0
 
-func _walk_one_stride():
-	# Animate through walk frames (frames 1-4)
-	for frame in [1, 2, 3, 4]:
-		if not is_walking:
+func _walk_one_stride() -> void:
+	for _step in range(4):
+		if not is_walking or is_defeated:
 			break
-		sprite.frame = frame
-		# Move position slightly
-		var old_x = position.x
-		position.x += walk_direction * walk_speed * 0.1
-		print("Boss frame: %d, moved from %.1f to %.1f" % [frame, old_x, position.x])
+		var new_x = global_position.x + (walk_direction * _current_walk_speed * 0.1)
+		if new_x > walk_min_x and new_x < walk_max_x:
+			velocity.x = walk_direction * _current_walk_speed
+		else:
+			walk_direction *= -1
+			if sprite:
+				sprite.flip_h = walk_direction < 0
 		await get_tree().create_timer(0.1).timeout
-
-func _on_body_entered(body):
-	if body is CharacterBody2D and is_active and not is_defeated:
-		is_active = false
-		visible = false
-		battle_result = ""
-
-		var stats = EnemyStats.new()
-		stats.enemy_name = boss_name
-		stats.max_hp = boss_max_hp
-		stats.current_hp = boss_max_hp
-		stats.attack = boss_attack
-		stats.defense = boss_defense
-		stats.speed = boss_speed
-		stats.xp_reward = boss_xp_reward
-
-		# Add boss-specific attack patterns
-		stats.attacks = [
-			{"name": "Frosting Slam", "power": 1.2, "description": "A heavy attack!"},
-			{"name": "Sugar Rush", "power": 0.8, "description": "Quick strike!"},
-			{"name": "Candy Crush", "power": 1.5, "description": "Devastating blow!"},
-		]
-
-		# Start battle
-		GameManager.start_battle(stats)
-
-		# Connect to battle end signals
-		if GameManager.current_battle_scene:
-			GameManager.current_battle_scene.battle_manager.battle_won.connect(_on_battle_won)
-			GameManager.current_battle_scene.battle_manager.battle_lost.connect(_on_battle_lost)
-			GameManager.current_battle_scene.battle_manager.battle_fled.connect(_on_battle_fled)
-
-func _on_battle_won(_xp):
-	battle_result = "won"
-	is_defeated = true
-	_handle_battle_end()
-
-func _on_battle_lost():
-	battle_result = "lost"
-	_handle_battle_end()
-
-func _on_battle_fled():
-	battle_result = "fled"
-	_handle_battle_end()
-
-func _handle_battle_end():
-	await get_tree().create_timer(0.2).timeout
-
-	if battle_result == "won":
-		# Boss defeated - remove permanently
-		print("Boss defeated! %s will not respawn." % boss_name)
-		# TODO: Save defeat state to save file
-		queue_free()
-	elif battle_result == "fled":
-		# Boss respawns if player fled
-		await get_tree().create_timer(3.0).timeout
-		is_active = true
-		visible = true
-	elif battle_result == "lost":
-		# Boss respawns if player lost
-		await get_tree().create_timer(5.0).timeout
-		is_active = true
-		visible = true
+	velocity.x = 0.0

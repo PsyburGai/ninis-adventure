@@ -3,20 +3,21 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "maps/world1/level_1-3.tmx",
+    "activeFile": "wont_allow_update/level_1-1.tmx",
     "expandedProjectPaths": [
+        "assets",
+        "maps",
+        "assets/tilesets/tileset_water",
+        "tilesets",
+        "nini",
         "assets/tilesets/objects",
         "assets/tilesets",
-        "maps/world2",
-        "tilesets",
-        ".",
-        "assets",
-        "assets/tilesets/tileset_grass_dirt",
-        "nini",
-        "maps",
         "assets/tilesets/objects/tree",
+        "assets/tilesets/tileset_grass_dirt",
+        "assets/tilesets/objects/ladder",
+        ".",
         "assets/tilesets/objects/portal",
-        "assets/tilesets/tileset_water",
+        "maps/world2",
         "maps/world1"
     ],
     "fileStates": {
@@ -33,6 +34,10 @@
             "scaleInEditor": 1
         },
         "assets/tilesets/objects/ladder/ladder.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/tilesets/objects/ladder/ladder_2.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
@@ -86,8 +91,8 @@
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 915,
-                "y": 196.3333333333333
+                "x": 732.3333333333333,
+                "y": 78.33333333333334
             }
         },
         "maps/world1/level_1-4.tmx": {
@@ -116,6 +121,17 @@
                 "x": 639.5846852693057,
                 "y": 168.3117592813963
             }
+        },
+        "wont_allow_update/level_1-1.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 1,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 616,
+                "y": 55
+            }
         }
     },
     "last.externalTilesetPath": "C:/Game Project/Nini's Adventure/assets/tilesets/tileset_grass_dirt",
@@ -125,29 +141,25 @@
     "map.tileWidth": 16,
     "map.width": 80,
     "openFiles": [
-        "maps/world1/level_1-1.tmx",
-        "maps/world1/level_1-2.tmx",
-        "maps/world1/level_1-3.tmx",
-        "maps/world1/level_1-4.tmx",
-        "maps/world1/level_1-5.tmx",
-        "assets/tilesets/tileset_grass_dirt/tileset_grass_dirt.tsx",
-        "assets/tilesets/tileset_water/tileset_water.tsx",
-        "maps/world2/level_2-1.tmx"
+        "wont_allow_update/level_1-1.tmx",
+        "assets/tilesets/objects/ladder/ladder.tsx",
+        "assets/tilesets/objects/ladder/ladder_2.tsx"
     ],
     "project": "nini_adventure.tiled-project",
+    "property.type": "float",
     "recentFiles": [
-        "maps/world1/level_1-1.tmx",
+        "assets/tilesets/objects/ladder/ladder_2.tsx",
+        "assets/tilesets/objects/ladder/ladder.tsx",
+        "wont_allow_update/level_1-1.tmx",
         "maps/world1/level_1-2.tmx",
         "maps/world2/level_2-1.tmx",
         "assets/tilesets/tileset_water/tileset_water.tsx",
         "assets/tilesets/tileset_grass_dirt/tileset_grass_dirt.tsx",
-        "maps/world1/level_1-5.tmx",
-        "maps/world1/level_1-4.tmx",
         "maps/world1/level_1-3.tmx",
-        "assets/tilesets/objects/portal/portal.tsx",
-        "assets/tilesets/objects/tree/tree.tsx",
-        "assets/tilesets/objects/ladder/ladder.tsx",
-        "assets/tilesets/objects/bush/bush.tsx"
+        "maps/world1/level_1-4.tmx",
+        "maps/world1/level_1-5.tmx",
+        "maps/world1/level_1-1.tmx",
+        "assets/tilesets/objects/portal/portal.tsx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)"
 }

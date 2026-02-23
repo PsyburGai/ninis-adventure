@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Desktop_Commander__interact_with_process",
+      "Bash(python:*)",
+      "Bash(/c/Python314/python:*)",
+      "Skill(pixel-plugin:pixel-art-animator)",
+      "Bash(python3:*)",
+      "Bash(py --version)",
+      "Bash(/c/Python314/python.exe:*)",
+      "Bash(pip install:*)",
+      "Bash(\"/c/Game Project/Nini's Adventure/_run_aseprite.bat\":*)",
+      "Bash(pip3 list:*)",
+      "Bash(pip3 show:*)",
+      "Bash(cmd.exe:*)",
+      "Bash(\"C:/Program Files/Aseprite/Aseprite.exe\":*)",
+      "mcp__pixellab__create_character",
+      "mcp__pixellab__animate_character",
+      "mcp__pixellab__get_character",
+      "Bash(ls -la \"C:\\\\Game Project\\\\Nini''s Adventure\\\\source\\\\scripts\"\" 2>/dev/null || echo \"Directory listing not available \")",
+      "Bash(tail:*)"
+    ]
+  }
+}

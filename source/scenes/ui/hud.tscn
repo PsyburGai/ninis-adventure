@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://hud_scene"]
+
+[ext_resource type="Script" path="res://source/scripts/ui/hud.gd" id="1_script"]
+[ext_resource type="Script" path="res://source/scripts/ui/skill_bar.gd" id="2_skillbar"]
+
+[node name="HUD" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_script")
+
+[node name="Panel" type="PanelContainer" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 120.0
+offset_bottom = 68.0
+theme_override_styles/panel = null
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 112.0
+offset_bottom = 62.0
+
+[node name="CharacterLabel" type="Label" parent="Panel/VBox"]
+text = "Nini  Lv.1"
+theme_override_font_sizes/font_size = 7
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="HPRow" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="HPLabel" type="Label" parent="Panel/VBox/HPRow"]
+text = "HP:"
+theme_override_font_sizes/font_size = 6
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+
+[node name="HPBar" type="ProgressBar" parent="Panel/VBox/HPRow"]
+custom_minimum_size = Vector2(60, 8)
+size_flags_horizontal = 3
+max_value = 50.0
+value = 50.0
+show_percentage = false
+theme_override_styles/fill = null
+theme_override_styles/background = null
+
+[node name="MPRow" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="MPLabel" type="Label" parent="Panel/VBox/MPRow"]
+text = "MP:"
+theme_override_font_sizes/font_size = 6
+theme_override_colors/font_color = Color(0.3, 0.5, 1, 1)
+
+[node name="MPBar" type="ProgressBar" parent="Panel/VBox/MPRow"]
+custom_minimum_size = Vector2(60, 8)
+size_flags_horizontal = 3
+max_value = 20.0
+value = 20.0
+show_percentage = false
+
+[node name="EXPRow" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="EXPLabel" type="Label" parent="Panel/VBox/EXPRow"]
+text = "EXP:"
+theme_override_font_sizes/font_size = 6
+theme_override_colors/font_color = Color(0.9, 0.8, 0.2, 1)
+
+[node name="EXPBarContainer" type="Control" parent="Panel/VBox/EXPRow"]
+custom_minimum_size = Vector2(60, 8)
+size_flags_horizontal = 3
+
+[node name="EXPBar" type="ProgressBar" parent="Panel/VBox/EXPRow/EXPBarContainer"]
+offset_right = 60.0
+offset_bottom = 8.0
+max_value = 30.0
+value = 0.0
+show_percentage = false
+
+[node name="EXPText" type="Label" parent="Panel/VBox/EXPRow/EXPBarContainer"]
+offset_right = 60.0
+offset_bottom = 8.0
+text = "0 / 30"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="SkillBar" type="HBoxContainer" parent="."]
+offset_left = 205.0
+offset_top = 250.0
+offset_right = 275.0
+offset_bottom = 266.0
+theme_override_constants/separation = 2
+script = ExtResource("2_skillbar")

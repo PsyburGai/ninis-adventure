@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://boss_encounter"]
 
-[ext_resource type="Script" path="res://scenes/enemies/shared/boss_encounter.gd" id="1_boss"]
-[ext_resource type="Texture2D" path="res://scenes/enemies/cake_monster/Cake_Monster1.png" id="2_cake_boss"]
+[ext_resource type="Script" path="res://enemies/shared/boss_encounter.gd" id="1_boss"]
+[ext_resource type="Texture2D" path="res://enemies/cake_monster/Cake_Monster1.png" id="2_cake_boss"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_boss"]
 size = Vector2(32, 32)

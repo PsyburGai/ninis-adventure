@@ -2,11 +2,60 @@
 
 [ext_resource type="PackedScene" uid="uid://dt2g7bysjtcq7" path="res://maps/world1/level_1-1.tmx" id="1_map"]
 [ext_resource type="PackedScene" path="res://source/scenes/player/nini.tscn" id="2_nini"]
+[ext_resource type="PackedScene" uid="uid://ladder_scene" path="res://source/scenes/objects/ladder.tscn" id="4_ladder"]
+[ext_resource type="PackedScene" path="res://enemies/cake_monster/cake_monster.tscn" id="5_cake"]
+
+[sub_resource type="RectangleShape2D" id="ladder_shape_tall"]
+size = Vector2(14, 112)
 
 [node name="Level1_1" type="Node2D" unique_id=1208219098]
 
-[node name="TiledMap" parent="." unique_id=367186168 instance=ExtResource("1_map")]
+[node name="TiledMap" parent="." unique_id=1701732166 instance=ExtResource("1_map")]
 position = Vector2(0, 144)
 
 [node name="Nini" parent="." unique_id=522777548 instance=ExtResource("2_nini")]
 position = Vector2(240, 384)
+
+[node name="Ladder_Short" parent="." instance=ExtResource("4_ladder")]
+position = Vector2(88, 368)
+
+[node name="Ladder_Tall" parent="." instance=ExtResource("4_ladder")]
+position = Vector2(984, 320)
+
+[node name="CollisionShape2D" parent="Ladder_Tall" index="0"]
+shape = SubResource("ladder_shape_tall")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="CakeMonster_1" parent="Enemies" instance=ExtResource("5_cake")]
+position = Vector2(335, 255)
+
+[node name="CakeMonster_2" parent="Enemies" instance=ExtResource("5_cake")]
+position = Vector2(426, 415)
+
+[node name="CakeMonster_3" parent="Enemies" instance=ExtResource("5_cake")]
+position = Vector2(574, 415)
+
+[node name="CakeMonster_4" parent="Enemies" instance=ExtResource("5_cake")]
+position = Vector2(699, 415)
+
+[node name="CakeMonster_5" parent="Enemies" instance=ExtResource("5_cake")]
+position = Vector2(752, 415)
+
+[node name="CakeMonster_6" parent="Enemies" instance=ExtResource("5_cake")]
+position = Vector2(816, 415)
+
+[node name="CakeMonster_7" parent="Enemies" instance=ExtResource("5_cake")]
+position = Vector2(821, 208)
+
+[node name="CakeMonster_8" parent="Enemies" instance=ExtResource("5_cake")]
+position = Vector2(1057, 240)
+
+[node name="CakeMonster_9" parent="Enemies" instance=ExtResource("5_cake")]
+position = Vector2(1193, 224)
+
+[node name="CakeMonster_10" parent="Enemies" instance=ExtResource("5_cake")]
+position = Vector2(259, 415)
+
+[node name="CakeMonster_11" parent="Enemies" instance=ExtResource("5_cake")]
+position = Vector2(1173, 415)

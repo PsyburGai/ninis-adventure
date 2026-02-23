@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://enemy_encounter"]
 
-[ext_resource type="Script" path="res://scenes/enemies/shared/enemy_encounter.gd" id="1_encounter"]
+[ext_resource type="Script" path="res://enemies/shared/enemy_encounter.gd" id="1_encounter"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_area"]
 size = Vector2(32, 32)

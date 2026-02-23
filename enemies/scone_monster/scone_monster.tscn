@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3]
 
-[ext_resource type="Script" path="res://scenes/enemies/shared/enemy_encounter.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://scenes/enemies/scone_monster/scone_monster_spritesheet.png" id="2_sprite"]
+[ext_resource type="Script" path="res://enemies/shared/enemy_encounter.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://enemies/scone_monster/scone_monster_spritesheet.png" id="2_sprite"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_idle0"]
 atlas = ExtResource("2_sprite")
@@ -68,7 +68,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
 size = Vector2(16, 20)
 
-[node name="SconeMonster" type="Area2D"]
+[node name="SconeMonster" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 1
 script = ExtResource("1_script")
@@ -76,7 +76,6 @@ enemy_name = "Scone Monster"
 enemy_max_hp = 20
 enemy_attack = 5
 enemy_defense = 3
-enemy_speed = 4
 enemy_xp_reward = 12
 can_walk = true
 walk_speed = 20.0

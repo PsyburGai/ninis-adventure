@@ -3,10 +3,14 @@
 [ext_resource type="Script" path="res://source/scripts/objects/ladder.gd" id="1_script"]
 
 [sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(16, 48)
+size = Vector2(14, 48)
 
 [node name="Ladder" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+monitorable = true
 script = ExtResource("1_script")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0)
 shape = SubResource("1")
